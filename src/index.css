@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+.skill-slider {
+  @apply relative h-2 bg-purple-900/30 rounded-full overflow-hidden;
+}
+
+.skill-slider::after {
+  content: '';
+  @apply absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full;
+  animation: skillProgress 1.5s ease-out forwards;
+}
+
+@keyframes skillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress);
+  }
+}
+
+.hero-image {
+  margin-top: 5rem;
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.3);
+}
+
+.section-heading {
+  @apply relative inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  @apply absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full;
+}
